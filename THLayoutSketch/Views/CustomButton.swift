@@ -10,11 +10,14 @@ import UIKit
 
 class CustomButton: UIButton {
 
-    init(_ title: String, _ backgroundColor: UIColor, _ frame: CGRect) {
+    init(_ title: String, _ backgroundColor: UIColor, _ frame: CGRect, _ font: UIFont) {
         super.init(frame: frame)
         
         self.setTitle(title, for: .normal)
         self.backgroundColor = backgroundColor
+        self.titleLabel?.font = font
+        
+        
     }
     
     required init?(coder: NSCoder) {

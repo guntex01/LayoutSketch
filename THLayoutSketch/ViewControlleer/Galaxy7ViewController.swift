@@ -17,7 +17,8 @@ class Galaxy7ViewController: UIViewController {
     let createLabel: UILabel = {
         let label = UILabel()
         label.text = "Create your account"
-        label.font = UIFont(name: "Arial", size: 35)
+        //label.font = UIFont(name: "Arial", size: 0)
+        label.font = UIFont.boldSystemFont(ofSize: 30)
         label.numberOfLines = 0
         label.textColor = UIColor.text()
         return label
@@ -35,7 +36,7 @@ class Galaxy7ViewController: UIViewController {
         return textField
     }()
     let emailTextField: CustomTextField = {
-        let textField = CustomTextField("email", UIColor.clear, UIColor.white, UIColor.yellow, .zero)
+        let textField = CustomTextField("Email", UIColor.clear, UIColor.white, UIColor.yellow, .zero)
         return textField
     }()
     let passwordTextField: CustomTextField = {
@@ -55,26 +56,35 @@ class Galaxy7ViewController: UIViewController {
         return button
     }()
     let signUpButton: CustomButton = {
-        let button = CustomButton("SIGN UP", UIColor.email(), .zero)
+        let button = CustomButton("SIGN UP", UIColor.email(), .zero, UIFont.boldSystemFont(ofSize: 20))
         
         return button
     }()
     let signUpFbButton: CustomButton = {
-        let button = CustomButton("SIGN UP WITH FACEBOOK", UIColor.facebook(), .zero)
+        let button = CustomButton("SIGN UP WITH FACEBOOK", UIColor.facebook(), .zero,UIFont.boldSystemFont(ofSize: 20))
         
         return button
     }()
     let orLabel: UILabel = {
         let label = UILabel()
-        label.text = "----------OR----------"
+        label.text = "OR"
         label.textColor = .white
         label.textAlignment = .center
         return label
     }()
-    
+    let lineView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        return view
+    }()
+    let lineView1: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        return view
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.sv([topView, nameLabel,nameTextField, emailTextField, passwordTextField,checkLabel, checkButton, signUpButton, signUpFbButton, orLabel])
+        view.sv([topView, nameLabel,nameTextField, emailTextField, passwordTextField,checkLabel, checkButton, signUpButton, signUpFbButton, orLabel,lineView, lineView1])
         topView.sv(createLabel)
         
         self.view.backgroundColor = UIColor.view1()
@@ -98,7 +108,7 @@ class Galaxy7ViewController: UIViewController {
             30,
             |-50-signUpButton-50-| ~ 50,
             10,
-            |-50-orLabel-50-|,
+            |-50-lineView.height(1)-orLabel.centerHorizontally()-lineView1.height(1)-50-|,
             10,
             |-50-signUpFbButton-50-| ~ 50
         )
@@ -110,5 +120,5 @@ class Galaxy7ViewController: UIViewController {
         )
         
     }
-   
+    
 }

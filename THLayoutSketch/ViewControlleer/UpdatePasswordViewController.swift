@@ -12,7 +12,8 @@ class UpdatePasswordViewController: UIViewController {
     let  updateLabel: UILabel = {
         let label = UILabel()
         label.text = "Update your password"
-        label.font = UIFont(name: "Arial", size: 35)
+        //label.font = UIFont(name: "Arial", size: 35)
+        label.font = UIFont.boldSystemFont(ofSize: 30)
         label.numberOfLines = 0
         label.textColor = UIColor.text()
         return label
@@ -34,7 +35,7 @@ class UpdatePasswordViewController: UIViewController {
         return textField
     }()
     let resetButton: CustomButton = {
-        let button = CustomButton("RESET PASSWORD", UIColor.email(), .zero)
+        let button = CustomButton("RESET PASSWORD", UIColor.email(), .zero, UIFont.boldSystemFont(ofSize: 20))
         button.addTarget(self, action: #selector(nextPage), for: .touchUpInside)
         return button
     }()

@@ -12,8 +12,9 @@ class ForgotPasswordViewController: UIViewController {
     let  forLabel: UILabel = {
         let label = UILabel()
         label.text = "Forgot Password"
-        label.font = UIFont(name: "Arial", size: 30)
+        //label.font = UIFont(name: "Arial", size: 30)
         label.numberOfLines = 0
+        label.font = UIFont.boldSystemFont(ofSize: 30)
         label.textColor = UIColor.text()
         return label
     }()
@@ -30,7 +31,7 @@ class ForgotPasswordViewController: UIViewController {
         return textField
     }()
     let sendButton: CustomButton = {
-        let button = CustomButton("SEND", UIColor.email(), .zero)
+        let button = CustomButton("SEND", UIColor.email(), .zero, UIFont.boldSystemFont(ofSize: 20))
         button.addTarget(self, action: #selector(nextPage), for: .touchUpInside)
         return button
     }()

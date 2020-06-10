@@ -25,4 +25,7 @@ extension UIColor {
     class func text() -> UIColor {
         return UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00)
     }
+    class func plachoder() -> UIColor {
+        return #colorLiteral(red: 0.4390351772, green: 0.4430349469, blue: 0.451287508, alpha: 1)
+    }
 }

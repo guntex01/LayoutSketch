@@ -17,7 +17,7 @@ class CustomTextField: UITextField {
         self.backgroundColor = backgroundColor
         self.textColor = textColor
         placeHolder = NSMutableAttributedString(string: plachoder, attributes: [:])
-        placeHolder.addAttribute(.foregroundColor, value: UIColor.email(), range: NSRange(location: 0, length: plachoder.count))
+        placeHolder.addAttribute(.foregroundColor, value: UIColor.plachoder(), range: NSRange(location: 0, length: plachoder.count))
         self.attributedPlaceholder = placeHolder
     }
     

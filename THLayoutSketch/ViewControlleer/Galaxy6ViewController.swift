@@ -15,11 +15,18 @@ class Galaxy6ViewController: UIViewController {
 
         return photoImage
     }()
+    let checkImage: UIImageView = {
+    let image = UIImageView()
+        image.image = UIImage(named: "bigCheck")
+
+        return image
+    }()
     let  helloLabel: UILabel = {
         let label = UILabel()
         label.text = "Hello Linda"
         label.textAlignment = .center
-        label.font = UIFont(name: "Arial", size: 35)
+        //label.font = UIFont(name: "Arial", size: 0)
+        label.font = UIFont.boldSystemFont(ofSize: 30)
         label.numberOfLines = 0
         label.textColor = UIColor.text()
         return label
@@ -34,14 +41,14 @@ class Galaxy6ViewController: UIViewController {
         return label
     }()
     let startButton: CustomButton = {
-        let button = CustomButton("START SHOPPING", UIColor.email(), .zero)
+        let button = CustomButton("START SHOPPING", UIColor.email(), .zero, UIFont.boldSystemFont(ofSize: 20))
         button.addTarget(self, action: #selector(nextPage), for: .touchUpInside)
         return button
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.view1()
-        view.sv([photoImage, helloLabel, yourLabel, startButton])
+        view.sv([photoImage, helloLabel, yourLabel, startButton, checkImage])
         
         setupLayout()
     }
@@ -65,9 +72,12 @@ class Galaxy6ViewController: UIViewController {
         50,
         |-50-startButton-50-| ~ 50
         )
-        
+        view.layout(
+        200,
+        |-280-checkImage-40-| ~ 100
+        )
         photoImage.Width == photoImage.Height
-    
+        
     }
     @objc func nextPage(){
     let galaxy7VC = Galaxy7ViewController()

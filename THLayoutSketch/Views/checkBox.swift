@@ -12,7 +12,7 @@ class checkBox: UIButton {
     
     
     // Images
-    let checkedImage = UIImage(named:"check1")
+    let checkedImage = UIImage(named:"check")
     let uncheckedImage = UIImage(named: "uncheck")
     
     init( _ backgroundColor: UIColor, _ frame: CGRect) {

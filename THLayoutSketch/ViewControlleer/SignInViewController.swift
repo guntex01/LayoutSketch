@@ -17,29 +17,23 @@ class SignInViewController: UIViewController {
     let textLabel: UILabel = {
         let label = UILabel()
         label.text = "Login to your acoount"
-        label.font = UIFont(name: "Arial", size: 35)
+        //label.font = UIFont(name: "Arial", size: 35)
         label.numberOfLines = 0
+        label.font = UIFont.boldSystemFont(ofSize: 30)
         label.textColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00)
         return label
     }()
-    let emailLabel: UILabel = {
-        let label = UILabel()
-        label.text = " Email"
-        label.font = UIFont(name: "Arial", size: 14)
-        label.textColor = UIColor(red: 0.50, green: 0.50, blue: 0.50, alpha: 1.00)
-        return label
-    }()
     let topTextFild: CustomTextField = {
-        let textFiled = CustomTextField("", UIColor.clear, UIColor.white, UIColor.yellow, CGRect.zero)
+        let textFiled = CustomTextField("Email", UIColor.clear, UIColor.red, UIColor.yellow, CGRect.zero)
         return textFiled
     }()
     
-    private let bottomTextField: UITextField = {
-        let textField = UITextField()
-        textField.backgroundColor = UIColor.clear
-        textField.textColor = UIColor.white
-        textField.placeholder = "Password"
-        
+    private let bottomTextField: CustomTextField = {
+        let textField = CustomTextField("Password", UIColor.clear, UIColor.white, UIColor.plachoder(), .zero)
+//        textField.backgroundColor = UIColor.clear
+//        textField.textColor = UIColor.white
+//        textField.placeholder = "Password"
+                
         return textField
     }()
     
@@ -50,9 +44,10 @@ class SignInViewController: UIViewController {
     }()
     let forgotButton: UIButton = {
         let button = UIButton()
-        button.text("forgot?")
-        button.setTitleColor(UIColor(red: 0.16, green: 0.47, blue: 0.38, alpha: 1.00), for: .normal)
+        button.setTitleColor(#colorLiteral(red: 0.5140553117, green: 0.5179906487, blue: 0.5212120414, alpha: 1), for: .normal)
         button.addTarget(self, action: #selector(nextPage), for: .touchUpInside)
+        let at=NSMutableAttributedString(string: "Forgot?", attributes: [NSAttributedString.Key.foregroundColor: UIColor(red: 0.5140553117, green: 0.5179906487, blue: 0.5212120414, alpha: 1), NSAttributedString.Key.font: UIFont(name: "Arial", size: 15.0)!])
+        button.setAttributedTitle(at, for: .normal)
         return button
     }()
     let rememberLabel: UILabel = {
@@ -63,11 +58,13 @@ class SignInViewController: UIViewController {
         return label
     }()
     let signIn: CustomButton = {
-        let button = CustomButton("SIGN IN", UIColor.email(), .zero)
+        let button = CustomButton("SIGN IN", UIColor.email(), .zero, UIFont.boldSystemFont(ofSize: 20))
+        // làm đậm text button
+        //button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         return button
     }()
     let signINFb: CustomButton = {
-        let button = CustomButton("SIGN IN WITH FACEBOOK", UIColor.facebook(), .zero)
+        let button = CustomButton("SIGN IN WITH FACEBOOK", UIColor.facebook(), .zero, UIFont.boldSystemFont(ofSize: 20))
         return button
     }()
     let checkButton: checkBox = {
@@ -77,7 +74,7 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.sv([blackView, emailLabel, topTextFild, bottomTextField,lineView2, rememberLabel, signIn, signINFb, checkButton])
+        view.sv([blackView, topTextFild, bottomTextField, rememberLabel, signIn, signINFb, checkButton])
         blackView.sv([textLabel])
     
         self.view.backgroundColor = UIColor.view1()
@@ -89,14 +86,10 @@ class SignInViewController: UIViewController {
         view.layout(
             0,
             |-0-blackView-0-| ~ 243,
-            40,
-            |-50-emailLabel-50-|,
-            10,
+            30,
             |-50-topTextFild-50-|,
             30,
             |-50-bottomTextField-50-|,
-            5,
-            |-50-lineView2-50-| ~ 1,
             30,
             |-50-checkButton-rememberLabel-50-|,
             60,
@@ -120,7 +113,8 @@ class SignInViewController: UIViewController {
     func addButton(){
         bottomTextField.sv(forgotButton)
         bottomTextField.layout(
-            |-250-forgotButton-0-|
+            |-250-forgotButton-0-|,
+            1
         )
         bottomTextField.rightViewMode = UITextField.ViewMode.always
     }
