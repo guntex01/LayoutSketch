@@ -23,16 +23,8 @@ class Galaxy7ViewController: UIViewController {
         label.textColor = UIColor.text()
         return label
     }()
-    let nameLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Name"
-        label.font = UIFont(name: "Arial", size: 12)
-        label.numberOfLines = 0
-        label.textColor = UIColor.text()
-        return label
-    }()
     let nameTextField  : CustomTextField = {
-        let textField = CustomTextField("", UIColor.clear, UIColor.white, UIColor.yellow, .zero)
+        let textField = CustomTextField("Name", UIColor.clear, UIColor.white, UIColor.yellow, .zero)
         return textField
     }()
     let emailTextField: CustomTextField = {
@@ -40,13 +32,13 @@ class Galaxy7ViewController: UIViewController {
         return textField
     }()
     let passwordTextField: CustomTextField = {
-        let textField = CustomTextField("password", UIColor.clear, UIColor.white, UIColor.yellow, .zero)
+        let textField = CustomTextField("Password", UIColor.clear, UIColor.white, UIColor.yellow, .zero)
         return textField
     }()
     let checkLabel: UILabel = {
         let label = UILabel()
         label.text = "You agree the terms and privacy policy"
-        label.font = UIFont(name: "Arial", size: 12)
+        label.font = UIFont(name: "Arial", size: 14)
         label.numberOfLines = 0
         label.textColor = UIColor.text()
         return label
@@ -84,7 +76,7 @@ class Galaxy7ViewController: UIViewController {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.sv([topView, nameLabel,nameTextField, emailTextField, passwordTextField,checkLabel, checkButton, signUpButton, signUpFbButton, orLabel,lineView, lineView1])
+        view.sv([topView,nameTextField, emailTextField, passwordTextField,checkLabel, checkButton, signUpButton, signUpFbButton, orLabel,lineView, lineView1])
         topView.sv(createLabel)
         
         self.view.backgroundColor = UIColor.view1()
@@ -94,10 +86,8 @@ class Galaxy7ViewController: UIViewController {
     func setupLayout(){
         view.layout(
             0,
-            |-0-topView-0-| ~ 243,
+            |-0-topView-0-| ~ 200,
             30,
-            |-50-nameLabel-50-|,
-            5,
             |-50-nameTextField-50-|,
             40,
             |-50-emailTextField-50-|,
@@ -107,11 +97,12 @@ class Galaxy7ViewController: UIViewController {
             |-50-checkButton-checkLabel-50-|,
             30,
             |-50-signUpButton-50-| ~ 50,
-            10,
+            15,
             |-50-lineView.height(1)-orLabel.centerHorizontally()-lineView1.height(1)-50-|,
-            10,
+            15,
             |-50-signUpFbButton-50-| ~ 50
         )
+        
         checkButton.Width == checkButton.Height
         
         topView.layout(

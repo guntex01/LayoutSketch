@@ -27,7 +27,7 @@ class UpdatePasswordViewController: UIViewController {
         return label
     }()
     let textFieldPassword: CustomTextField = {
-        let textField = CustomTextField("", UIColor.clear, UIColor.white, UIColor.yellow, .zero)
+        let textField = CustomTextField("Password", UIColor.clear, UIColor.white, UIColor.yellow, .zero)
         return textField
     }()
     let textFieldConfirm: CustomTextField = {

@@ -16,7 +16,7 @@ class SignInViewController: UIViewController {
     }()
     let textLabel: UILabel = {
         let label = UILabel()
-        label.text = "Login to your acoount"
+        label.text = "Login to your account"
         //label.font = UIFont(name: "Arial", size: 35)
         label.numberOfLines = 0
         label.font = UIFont.boldSystemFont(ofSize: 30)
@@ -48,6 +48,7 @@ class SignInViewController: UIViewController {
         button.addTarget(self, action: #selector(nextPage), for: .touchUpInside)
         let at=NSMutableAttributedString(string: "Forgot?", attributes: [NSAttributedString.Key.foregroundColor: UIColor(red: 0.5140553117, green: 0.5179906487, blue: 0.5212120414, alpha: 1), NSAttributedString.Key.font: UIFont(name: "Arial", size: 15.0)!])
         button.setAttributedTitle(at, for: .normal)
+       
         return button
     }()
     let rememberLabel: UILabel = {
@@ -85,7 +86,7 @@ class SignInViewController: UIViewController {
     func setupLayout(){
         view.layout(
             0,
-            |-0-blackView-0-| ~ 243,
+            |-0-blackView-0-| ~ 200,
             30,
             |-50-topTextFild-50-|,
             30,
@@ -113,10 +114,11 @@ class SignInViewController: UIViewController {
     func addButton(){
         bottomTextField.sv(forgotButton)
         bottomTextField.layout(
-            |-250-forgotButton-0-|,
+            |-220-forgotButton-0-| ~ 20,
             1
         )
         bottomTextField.rightViewMode = UITextField.ViewMode.always
     }
 }
+
 

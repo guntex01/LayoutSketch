@@ -74,7 +74,7 @@ class Galaxy6ViewController: UIViewController {
         )
         view.layout(
         200,
-        |-280-checkImage-40-| ~ 100
+        |-250-checkImage-50-| ~ 100
         )
         photoImage.Width == photoImage.Height
         
